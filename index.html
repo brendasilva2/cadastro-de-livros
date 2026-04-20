@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universo dos livros</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="cabecalho">
+            <img class = "capa" src = "assets/capa.png" alt="Imagem de capa do site">
+            <h1 class="titulo-principal">Universo dos livros</h1>
+        </header>
+
+        <section class="catalogo-livros">
+            <input type="radio" name="aba" id="aba-catalogo" checked>
+            <input type="radio" name="aba" id="aba-formulario">
+
+            <div class="abas">
+                <label class="aba" for="aba-catalogo">Catálogo</label>
+                <label class="aba" for="aba-formulario">Cadastrar Livro</label>
+            </div>
+
+            <div id="catalogo" class="catalogo">
+                <div class="livro">
+                    <img class = "alice" src = "assets/alice.png" alt="Capa do livro Alice no país das maravilhas">
+                    
+                    <div class="conteudo">
+                        <h3 class="titulo-card">Alice no País das Maravilhas</h3>
+                        <p class="resumo">Uma garota curiosa segue um coelho e entra em um mundo mágico e ilógico, onde tudo desafia as regras da realidade e da razão.</p>
+                        
+                        <div class="acoes">
+                            <button class="btn-editar">Editar</button>
+                            <button class="btn-excluir">Excluir</button>
+                        </div>
+
+                    </div>
+                </div> 
+
+                <div class="livro">
+                    <img class = "hp" src = "assets/hp1.png" alt="Capa do livro Harry Potter e a Pedra Filosofal">
+                    
+                    <div class="conteudo">
+                        <h3 class="titulo-card">Harry Potter e a Pedra Filosofal</h3>
+                        <p lass="resumo">Um garoto descobre que é um bruxo e inicia sua jornada em uma escola de magia, enfrentando mistérios e perigos ligados ao seu passado.</p>
+                        
+                        <div class="acoes">
+                            <button class="btn-editar">Editar</button>
+                            <button class="btn-excluir">Excluir</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="livro">
+                    <img class = "dc" src = "assets/domcasmurro.png" alt="Capa do livro Dom Casmurro">
+                    
+                    <div class="conteudo">
+                        <h3 class="titulo-card">Dom Casmurro</h3>
+                        <p lass="resumo">Bentinho relembra sua história com Capitu, marcada por amor, ciúme e dúvidas que colocam em questão a verdade dos acontecimentos.</p>
+                       
+                         <div class="acoes">
+                            <button class="btn-editar">Editar</button>
+                            <button class="btn-excluir">Excluir</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="livro">
+                    <img class = "he" src = "assets/ahoradaestrela.png" alt="Capa do livro O Hobbit">
+                    
+                    <div class="conteudo">
+                        <h3 class="titulo-card">A Hora da Estrela</h3>
+                        <p lass="resumo">A história simples e comovente de Macabéa, uma jovem invisível para a sociedade, em busca de sentido em uma vida difícil.</p>
+                        
+                         <div class="acoes">
+                            <button class="btn-editar">Editar</button>
+                            <button class="btn-excluir">Excluir</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="livro">
+                    <img class = "pp" src = "assets/opequenoprincipe.png" alt="Capa do livro O Pequeno Príncipe">
+                    
+                    <div class="conteudo">
+                        <h3 class="titulo-card">O Pequeno Príncipe</h3>
+                        <p lass="resumo">Um jovem príncipe viaja por planetas e compartilha lições profundas sobre amizade, amor e o verdadeiro valor das coisas.</p>
+                       
+                         <div class="acoes">
+                            <button class="btn-editar">Editar</button>
+                            <button class="btn-excluir">Excluir</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="formulario" class="cadastro">   
+                <form class="formulario">
+
+                    <div class="titulo-livro">
+                        <label for="titulo">Título</label>
+                        <input type="text" id="titulo" required>
+                    </div>
+
+                    <div class="autor-livro">
+                        <label for="autor">Autor</label>
+                        <input type="text" id="autor" required>
+                    </div>
+
+                    <div class="genero-livro">
+                        <label for="genero">Gênero</label>
+                        <input type="text" id="genero" required>
+                    </div>
+
+                    <div class="data-publicacao">
+                        <label for="data">Data de publicação:</label>
+                        <input type="date" id="data" required>
+                    </div>
+
+                    <div class="carregar-capa">
+                        <label for="capa">Capa do livro</label>
+                        <input type="file" id="capa">
+                    </div>
+
+                    <div class="escrever-resumo">
+                        <label for="resumo">Resumo</label>
+                        <textarea id="resumo" rows="6" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-salvar">Salvar</button>
+                    <button type="button" class="btn-cancelar">Cancelar</button>
+                </form>
+            </div> 
+        </section>
+
+    <footer class="rodape">
+        <p class="direitos">© 2026 Universo dos Livros — Todos os direitos reservados. <br>
+        Imagens retiradas do Google e utilizadas somente para fins acadêmicos</p>
+    </footer>
+            
+           
+        </section>
+    </div>
+</body>
+</html>

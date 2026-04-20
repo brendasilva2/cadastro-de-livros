@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, serif;
+}
+
+body {
+    line-height: 1.6;
+    background: #C9A66B;
+    margin: 0;
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+    background: #6b4545;
+}
+
+.titulo-principal {
+    font-family: "Palatino Linotype", serif;
+}
+
+.capa {
+    width: 450px;
+    height: 250px; 
+    object-fit: cover;
+}
+
+.catalogo {
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.cadastro {
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+label {
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.abas {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: -10px;
+}
+
+.aba {
+    padding: 8px 8px;
+    cursor: pointer;
+    border-radius: 8px;
+    background: #F5E6D3;
+    display: inline-block;
+}
+
+.alice {
+    width: 150px;
+    border-radius: 8px;
+}
+
+.hp {
+    width: 140px;
+    border-radius: 8px;
+}
+
+.dc {
+    width: 155px;
+    border-radius: 8px;
+}
+
+.he {
+     width: 150px;
+     border-radius: 8px;
+}
+
+.pp {
+     width: 160px;
+     border-radius: 8px;
+}
+
+.livro {
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    gap: 15px;
+    width: 500px;
+    height: 250px;
+}
+
+.conteudo {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.resumo {
+    text-align: justify;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+.acoes {
+    margin-top: auto;
+}
+
+.btn-editar, .btn-excluir {
+    justify-content: space-between;
+    width: 50px;
+    border-radius: 5px;
+    border-color: #ebe5df;
+}
+
+.btn-salvar, .btn-cancelar {
+    justify-content: space-between;
+    width: 80px;
+}
+
+button {
+    cursor: pointer;
+}    
+
+.formulario {
+    background: white;
+    padding: 20px;
+    width: 400px;
+    border-radius: 8px;
+    margin: 40px auto;
+}
+
+.cadastro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.campo {
+    padding: 10px;
+}
+
+#formulario {
+    display: none;
+}
+
+#aba-formulario:checked ~ #formulario {
+    display: block;
+}
+
+#aba-formulario:checked ~ #catalogo {
+    display: none;
+}
+
+textarea {
+    width: 100%;
+    padding: 8px;
+    resize: none
+}
+
+input {
+    width: 100%;
+    padding: 3px;
+}
+
+.rodape{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background: #f1d4d4;
+}
+
+.direitos {
+    text-align: center;
+}
