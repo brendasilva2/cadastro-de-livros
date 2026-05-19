@@ -65,29 +65,11 @@ label {
     display: inline-block;
 }
 
-.alice {
-    width: 150px;
+.capa-livro {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
     border-radius: 8px;
-}
-
-.hp {
-    width: 140px;
-    border-radius: 8px;
-}
-
-.dc {
-    width: 155px;
-    border-radius: 8px;
-}
-
-.he {
-     width: 150px;
-     border-radius: 8px;
-}
-
-.pp {
-     width: 160px;
-     border-radius: 8px;
 }
 
 .livro {
