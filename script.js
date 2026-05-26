@@ -14,7 +14,7 @@ botao_salvar.addEventListener('click', function (e){
 
     const imagem = document.createElement('img');
     imagem.src = URL.createObjectURL(capa);
-    imagem.classList.add('capa-livro')
+    imagem.classList.add('capa-livro');
 
     const titulo_livro = document.createElement('h3');
     titulo_livro.textContent = titulo; 
@@ -23,11 +23,13 @@ botao_salvar.addEventListener('click', function (e){
     resumo_livro.textContent = resumo;
 
     const botao_excluir = document.createElement('button');
-    botao_excluir.textContent = 'excluir';
+    botao_excluir.textContent = "Excluir";
     botao_excluir.classList.add('btn-excluir');
 
      botao_excluir.addEventListener('click', function () {
-        livro.remove();
+        const escolha = confirm("Confirma a exclusão?")
+        if (escolha)
+            livro.remove();
     })
 
     const conteudo = document.createElement('div');
@@ -47,3 +49,37 @@ botao_salvar.addEventListener('click', function (e){
     formulario.reset(); 
     
 });
+
+fetch("livros.php").then(function (resposta) {
+    return resposta.json();
+})
+.then(function (livros) {
+    for(i=0; i <livros.length; i++){
+        const livro = document.createElement('div')
+        livro.classList.add('livro');
+        const titulo = document.createElement('h3')
+        const resumo = document.createElement('p');
+        const imagem = document.createElement('img');
+        imagem.classList.add('capa-livro');
+        const conteudo = document.createElement('div');
+        conteudo.classList.add('conteudo');
+        const botao_excluir = document.createElement('button');
+        botao_excluir.textContent = 'Excluir';
+        botao_excluir.classList.add('btn-excluir');
+        botao_excluir.addEventListener('click', function () {
+            const escolha = confirm("Confirma a exclusão?")
+            if (escolha)
+                livro.remove();
+        })
+        titulo.textContent = livros[i].titulo;
+        resumo.textContent = livros[i].resumo;
+        imagem.src = livros[i].capa;
+        conteudo.appendChild(titulo)
+        conteudo.appendChild(resumo)
+        conteudo.appendChild(botao_excluir)
+        livro.appendChild(imagem)
+        livro.appendChild(conteudo)
+        const catalogo = document.querySelector('.catalogo');
+        catalogo.appendChild(livro);
+    }
+})
