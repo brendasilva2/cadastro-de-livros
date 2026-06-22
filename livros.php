@@ -1,7 +1,17 @@
 <?php
+
+require "conexao.php";
+$sql = "SELECT * FROM livros";
+$resultado = $conexao -> query($sql);
+
+$livros = [];
+while ($livro = $resultado -> fetch_assoc()) {
+        array_push($livros, $livro);
+}
+
 header ("Content-Type: application/json");
 
-$livros = [
+/*$livros = [
     
         [
         "titulo" => "Alice no país das maravilhas",
@@ -47,7 +57,7 @@ $livros = [
         "data" => "06/04/1943",
         "genero" => "literatura infantojuvenil"
         ],
-];
+];*/
 
 echo json_encode($livros);
 

@@ -9,6 +9,29 @@ botao_salvar.addEventListener('click', function (e){
     const capa = document.querySelector('#capa').files[0];
     const resumo = document.querySelector('#resumo').value;
 
+    const dados = new FormData();
+    dados.append("titulo", titulo);
+    dados.append("autor", autor);
+    dados.append("genero", genero);
+    dados.append("data", data);
+    dados.append("capa", capa);
+    dados.append("resumo", resumo);
+
+    console.log("cliquei no salvar");
+
+    fetch("salvar.php", {
+        method: 'POST',
+        body: dados 
+    }) 
+
+    .then(function (resposta) {
+        return resposta.text();
+    })
+    .then(function (retorno) {
+        console.log("retorno do PHP:");
+        console.log(retorno);
+    })
+
     const livro = document.createElement('div');
     livro.classList.add('livro');
 
@@ -66,10 +89,18 @@ fetch("livros.php").then(function (resposta) {
         const botao_excluir = document.createElement('button');
         botao_excluir.textContent = 'Excluir';
         botao_excluir.classList.add('btn-excluir');
+        const idLivro = livros[i].id;
         botao_excluir.addEventListener('click', function () {
             const escolha = confirm("Confirma a exclusão?")
-            if (escolha)
+            if (escolha){
+                const dados = new FormData();
+                dados.append("id", idLivro);
+                fetch("excluir.php", {
+                    method: "POST",
+                    body: dados
+                })
                 livro.remove();
+            };    
         })
         titulo.textContent = livros[i].titulo;
         resumo.textContent = livros[i].resumo;
