@@ -24,9 +24,4 @@ VALUES (
 
 $conexao -> query($sql);
 
-if ($conexao -> query($sql)) {
-    echo "Livro salvo com sucesso";
-} else {
-    echo "Erro ao salvar: " . $conexao -> error;
-}
 ?> 

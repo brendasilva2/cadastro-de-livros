@@ -1,5 +1,5 @@
-const botao_salvar = document.querySelector('.btn-salvar');
-botao_salvar.addEventListener('click', function (e){
+const formulario = document.querySelector('.formulario');
+formulario.addEventListener('submit', function (e){
     e.preventDefault();
 
     const titulo = document.querySelector('#titulo').value;
@@ -17,61 +17,17 @@ botao_salvar.addEventListener('click', function (e){
     dados.append("capa", capa);
     dados.append("resumo", resumo);
 
-    console.log("cliquei no salvar");
-
     fetch("salvar.php", {
         method: 'POST',
         body: dados 
     }) 
 
-    .then(function (resposta) {
-        return resposta.text();
-    })
-    .then(function (retorno) {
-        console.log("retorno do PHP:");
-        console.log(retorno);
-    })
+    .then(function (){
+        location.reload();
+    });
 
-    const livro = document.createElement('div');
-    livro.classList.add('livro');
 
-    const imagem = document.createElement('img');
-    imagem.src = URL.createObjectURL(capa);
-    imagem.classList.add('capa-livro');
-
-    const titulo_livro = document.createElement('h3');
-    titulo_livro.textContent = titulo; 
-
-    const resumo_livro = document.createElement('p');
-    resumo_livro.textContent = resumo;
-
-    const botao_excluir = document.createElement('button');
-    botao_excluir.textContent = "Excluir";
-    botao_excluir.classList.add('btn-excluir');
-
-     botao_excluir.addEventListener('click', function () {
-        const escolha = confirm("Confirma a exclusão?")
-        if (escolha)
-            livro.remove();
-    })
-
-    const conteudo = document.createElement('div');
-    conteudo.classList.add('conteudo');
-
-    conteudo.appendChild(titulo_livro);
-    conteudo.appendChild(resumo_livro);
-    conteudo.appendChild(botao_excluir);
-
-    livro.appendChild(imagem);
-    livro.appendChild(conteudo);
-
-    const catalogo = document.querySelector('.catalogo');
-    catalogo.appendChild(livro);
-
-    const formulario = document.querySelector('.formulario');
-    formulario.reset(); 
-    
-});
+})
 
 fetch("livros.php").then(function (resposta) {
     return resposta.json();
